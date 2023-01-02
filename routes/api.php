@@ -13,6 +13,8 @@ use App\Http\Controllers\DeviceSearchController;
 use App\Http\Controllers\DeviceDeleteController;
 use App\Http\Controllers\DeviceTestDataController;
 
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +54,13 @@ Route::delete("delete/{id}",[DeviceDeleteController::class,'deleteData']);
 
 //api route for post should be here
 Route::post("test_data",[DeviceTestDataController::class,'TestData']);
+
+
+Route::group(['middleware' => 'auth:sanctum'], function(){
+    //All secure URL's
+
+    });
+
+
+Route::post("login",[UserController::class,'index']);
 
