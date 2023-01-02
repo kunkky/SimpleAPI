@@ -14,6 +14,8 @@ use App\Http\Controllers\DeviceDeleteController;
 use App\Http\Controllers\DeviceTestDataController;
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FileController;
+
 
 
 /*
@@ -63,4 +65,8 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
 
 
 Route::post("login",[UserController::class,'index']);
+
+
+//api route for File upload should be here
+Route::post("upload",[FileController::class,'UploadFile']);
 
